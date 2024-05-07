@@ -51,6 +51,19 @@ class MockAPIClient extends APIClient {
   }
 }
 
+class MockHeader {
+  headers: Record<string, any>
+  constructor(headers: Record<string, any>) {
+    this.headers = headers
+  }
+
+  forEach(callback: (value: string, key: any) => void) {
+    Object.entries(this.headers).forEach(([key, value]) => {
+      callback(value, key)
+    })
+  }
+}
+
 describe('APIClient', () => {
   let apiClient: MockAPIClient
 
@@ -305,18 +318,26 @@ describe('APIClient', () => {
     )
   })
 
-  test('get response headers', async () => {
-    const mockResponse = { id: 1, name: 'John Doe' }
-    const mockHeaders = { 'x-total-count': '100' }
+  test('getResponseHeaders should return an empty object if responseHeaders is null', () => {
+    const headers = apiClient.getResponseHeaders()
+
+    expect(headers).toEqual({})
+  })
+
+  test('getResponseHeaders should return the response headers as an object', async () => {
+    const mockHeaders = new MockHeader({
+      'x-custom-header': 'custom',
+    })
     global.fetch = jest.fn().mockResolvedValue({
-      json: jest
-        .fn()
-        .mockResolvedValue({ statusCode: 200, data: mockResponse }),
+      json: jest.fn().mockResolvedValue({ statusCode: 200, data: {} }),
       headers: mockHeaders,
     })
 
-    await apiClient.callView('users', 1)
+    await apiClient.callList('users')
+    const h = apiClient.getResponseHeaders()
 
-    expect(apiClient.getResponseHeaders()).toEqual(mockHeaders)
+    expect(h).toEqual({
+      'x-custom-header': 'custom',
+    })
   })
 })
