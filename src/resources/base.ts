@@ -17,8 +17,16 @@ export abstract class APIClient {
     this.customHeaders[key] = value
   }
 
-  getResponseHeaders(): Headers | null {
-    return this.responseHeaders
+  getResponseHeaders(): Record<string, any> {
+    const headers: Record<string, any> = {}
+    if (this.responseHeaders === null) {
+      return headers
+    }
+
+    this.responseHeaders.forEach(
+      (value: any, key: string) => (headers[key] = value)
+    )
+    return headers
   }
 
   private validateResponse<T>(response: IViewResponse<T>): void {
