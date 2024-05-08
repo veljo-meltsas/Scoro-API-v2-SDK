@@ -2,11 +2,11 @@ import { APIClient } from '../../base'
 import { ISendLog } from './types/send-log.type'
 
 export class SendLogService extends APIClient {
-  async getSendLogs(): Promise<ISendLog[]> {
-    return await this.list<ISendLog>('sendLog')
-  }
-
-  async findAllSendLogsBy(filters: Record<string, any>): Promise<ISendLog[]> {
-    return await this.list<ISendLog>('sendLog', filters)
+  async getSendLogs(
+    query: Record<string, unknown> = {},
+    perPage = 50,
+    page = 1
+  ): Promise<ISendLog[]> {
+    return await this.list<ISendLog>('sendLog', query, {}, perPage, page)
   }
 }

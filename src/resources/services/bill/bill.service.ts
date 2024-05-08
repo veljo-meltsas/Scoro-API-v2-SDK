@@ -6,8 +6,12 @@ export class BillsService extends APIClient {
     return await this.view<IBill>('bills', id)
   }
 
-  async getBills(): Promise<IBill[]> {
-    return await this.list<IBill>('bills')
+  async getBills(
+    query: Record<string, unknown> = {},
+    perPage = 50,
+    page = 1
+  ): Promise<IBill[]> {
+    return await this.list<IBill>('bills', query, {}, perPage, page)
   }
 
   async updateBill(id: number, data: Record<string, unknown>): Promise<void> {
@@ -20,9 +24,5 @@ export class BillsService extends APIClient {
 
   async deleteBill(id: number): Promise<void> {
     await this.delete('bills', id)
-  }
-
-  async findAllBillsBy(filters: Record<string, any>): Promise<IBill[]> {
-    return await this.list<IBill>('bills', filters)
   }
 }

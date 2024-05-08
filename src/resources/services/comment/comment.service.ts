@@ -4,19 +4,27 @@ import { IComment } from './types/comment.type'
 export class CommentService extends APIClient {
   async getComments(
     request: Partial<IComment> = {},
-    filters: Record<string, any> = {}
+    filters: Record<string, any> = {},
+    perPage = 50,
+    page = 1
   ): Promise<IComment[]> {
-    return this.list<IComment>('comments', filters, request)
+    return await this.list<IComment>(
+      'comments',
+      filters,
+      request,
+      perPage,
+      page
+    )
   }
 
   async modifyComment(
     id: number,
     request: Partial<IComment>
   ): Promise<IComment> {
-    return this.update<IComment>('comments', id, request)
+    return await this.update<IComment>('comments', id, request)
   }
 
   async deleteComment(id: number): Promise<void> {
-    return this.delete('comments', id)
+    return await this.delete('comments', id)
   }
 }

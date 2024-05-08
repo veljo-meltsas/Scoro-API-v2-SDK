@@ -2,8 +2,18 @@ import { APIClient } from '../../base'
 import type { INotification } from './types/notification.type'
 
 export class NotificationService extends APIClient {
-  async getNotifications(): Promise<INotification[]> {
-    return await this.list<INotification>('notifications')
+  async getNotifications(
+    query: Record<string, unknown> = {},
+    perPage = 50,
+    page = 1
+  ): Promise<INotification[]> {
+    return await this.list<INotification>(
+      'notifications',
+      query,
+      {},
+      perPage,
+      page
+    )
   }
 
   async createNotification(
@@ -21,9 +31,5 @@ export class NotificationService extends APIClient {
 
   async deleteNotification(id: number): Promise<void> {
     await this.delete('notifications', id)
-  }
-
-  async findAllBy(query: Record<string, unknown>): Promise<INotification[]> {
-    return await this.list<INotification>('notifications', query)
   }
 }

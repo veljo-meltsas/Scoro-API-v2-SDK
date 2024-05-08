@@ -14,11 +14,11 @@ export class WebhookService extends APIClient {
     await this.customCallWithouBodyAndId('webhooks', 'unsubscribe', webhookId)
   }
 
-  async getWebhooks(): Promise<IWebhook[]> {
-    return await this.list<IWebhook>('webhooks')
-  }
-
-  async findAllWebhooksBy(filters: Record<string, any>): Promise<IWebhook[]> {
-    return await this.list<IWebhook>('webhooks', filters)
+  async getWebhooks(
+    query: Record<string, unknown> = {},
+    perPage = 50,
+    page = 1
+  ): Promise<IWebhook[]> {
+    return await this.list<IWebhook>('webhooks', query, {}, perPage, page)
   }
 }

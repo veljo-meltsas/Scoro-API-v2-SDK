@@ -6,11 +6,11 @@ export class DepotService extends APIClient {
     return await this.view<IDepot>('depot', id)
   }
 
-  async getDepots(): Promise<IDepot[]> {
-    return await this.list<IDepot>('depot')
-  }
-
-  async findAllDepotsBy(query: Record<string, unknown>): Promise<IDepot[]> {
-    return await this.list<IDepot>('depot', query)
+  async getDepots(
+    query: Record<string, unknown> = {},
+    perPage = 50,
+    page = 1
+  ): Promise<IDepot[]> {
+    return await this.list<IDepot>('depot', query, {}, perPage, page)
   }
 }

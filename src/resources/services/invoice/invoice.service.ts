@@ -7,8 +7,12 @@ export class InvoicesService extends APIClient {
     return await this.view<IInvoice>('invoices', id)
   }
 
-  async getInvoices(): Promise<IInvoice[]> {
-    return await this.list<IInvoice>('invoices')
+  async getInvoices(
+    query: Record<string, unknown> = {},
+    perPage = 50,
+    page = 1
+  ): Promise<IInvoice[]> {
+    return await this.list<IInvoice>('invoices', query, {}, perPage, page)
   }
 
   async updateInvoice(
@@ -24,10 +28,6 @@ export class InvoicesService extends APIClient {
 
   async deleteInvoice(id: number): Promise<void> {
     await this.delete('invoices', id)
-  }
-
-  async findAllInvoicesBy(filters: Record<string, any>): Promise<IInvoice[]> {
-    return await this.list<IInvoice>('invoices', filters)
   }
 
   async getPdf(id: number): Promise<IDocPdf> {

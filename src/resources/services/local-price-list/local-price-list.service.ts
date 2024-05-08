@@ -2,8 +2,18 @@ import { APIClient } from '../../base'
 import type { ILocalPriceList } from './types/local-price-list.type'
 
 export class LocalPriceListService extends APIClient {
-  async getLocalPriceLists(): Promise<ILocalPriceList[]> {
-    return await this.list<ILocalPriceList>('localPriceLists')
+  async getLocalPriceLists(
+    query: Record<string, unknown> = {},
+    perPage = 50,
+    page = 1
+  ): Promise<ILocalPriceList[]> {
+    return await this.list<ILocalPriceList>(
+      'localPriceLists',
+      query,
+      {},
+      perPage,
+      page
+    )
   }
 
   async getLocalPriceList(id: number): Promise<ILocalPriceList> {
@@ -21,11 +31,5 @@ export class LocalPriceListService extends APIClient {
     data: Partial<ILocalPriceList>
   ): Promise<ILocalPriceList> {
     return await this.update<ILocalPriceList>('localPriceLists', id, data)
-  }
-
-  async findAllLocalPriceListsBy(
-    query: Record<string, unknown>
-  ): Promise<ILocalPriceList[]> {
-    return await this.list<ILocalPriceList>('localPriceLists', query)
   }
 }

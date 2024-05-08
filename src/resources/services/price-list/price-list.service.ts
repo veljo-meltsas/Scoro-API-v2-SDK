@@ -6,8 +6,12 @@ export class PriceListService extends APIClient {
     return await this.view<IPriceList>('priceLists', id)
   }
 
-  async getPriceLists(): Promise<IPriceList[]> {
-    return await this.list<IPriceList>('priceLists')
+  async getPriceLists(
+    query: Record<string, unknown> = {},
+    perPage = 50,
+    page = 1
+  ): Promise<IPriceList[]> {
+    return await this.list<IPriceList>('priceLists', query, {}, perPage, page)
   }
 
   async createPriceList(data: Partial<IPriceList>): Promise<IPriceList> {
@@ -19,11 +23,5 @@ export class PriceListService extends APIClient {
     data: Partial<IPriceList>
   ): Promise<IPriceList> {
     return await this.update<IPriceList>('priceLists', id, data)
-  }
-
-  async findAllPriceListBy(
-    query: Record<string, unknown>
-  ): Promise<IPriceList[]> {
-    return await this.list<IPriceList>('priceLists', query)
   }
 }

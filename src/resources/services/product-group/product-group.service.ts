@@ -2,8 +2,18 @@ import { APIClient } from '../../base'
 import type { IProductGroup } from './types/product-group.type'
 
 export class ProductGroupService extends APIClient {
-  async getProductGroups(): Promise<IProductGroup[]> {
-    return await this.list<IProductGroup>('productGroups')
+  async getProductGroups(
+    query: Record<string, unknown> = {},
+    perPage = 50,
+    page = 1
+  ): Promise<IProductGroup[]> {
+    return await this.list<IProductGroup>(
+      'productGroups',
+      query,
+      {},
+      perPage,
+      page
+    )
   }
 
   async getProductGroup(id: number): Promise<IProductGroup> {
@@ -21,11 +31,5 @@ export class ProductGroupService extends APIClient {
     data: Partial<IProductGroup>
   ): Promise<IProductGroup> {
     return await this.update<IProductGroup>('productGroups', id, data)
-  }
-
-  async findAllProductGroupBy(
-    query: Record<string, unknown>
-  ): Promise<IProductGroup[]> {
-    return await this.list<IProductGroup>('productGroups', query)
   }
 }

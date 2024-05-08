@@ -31,13 +31,17 @@ export abstract class APIClient {
 
   private validateResponse<T>(response: IViewResponse<T>): void {
     if (response.errors || response.statusCode !== 200) {
-      throw new Error(
-        JSON.stringify({
-          error: response.errors,
-          statusCode: response.statusCode,
-          messages: response.messages,
-        })
-      )
+      try {
+        throw new Error(
+          JSON.stringify({
+            error: response.errors,
+            statusCode: response.statusCode,
+            messages: response.messages,
+          })
+        )
+      } catch (error) {
+        throw error
+      }
     }
   }
 
@@ -65,13 +69,16 @@ export abstract class APIClient {
     endpoint: string,
     filters: Record<string, any> = {},
     request: Record<string, any> = {},
-    perPage = 50
+    perPage = 50,
+    page = 1
   ): Promise<T[]> {
     const body = {
       ...this.payload,
       request: request,
       filter: filters,
       per_page: perPage,
+      page: page,
+      detailed_response: true,
     }
 
     const response = await fetch(`${this.siteUrl}/api/v2/${endpoint}/list`, {
@@ -199,11 +206,17 @@ export abstract class APIClient {
 
   protected async callRelations<T>(
     endpoint: string,
-    request: Partial<T>
+    request: Partial<T>,
+    filters: Record<string, any> = {},
+    perPage = 50,
+    page = 1
   ): Promise<T> {
     const body = {
       ...this.payload,
       request: request,
+      filter: filters,
+      per_page: perPage,
+      page: page,
     }
 
     const response = await fetch(`${this.siteUrl}/api/v2/${endpoint}`, {

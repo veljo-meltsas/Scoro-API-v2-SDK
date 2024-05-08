@@ -7,12 +7,12 @@ export class UserService extends APIClient {
     return await this.view<IUser>('users', id)
   }
 
-  async getUsers(): Promise<IUser[]> {
-    return await this.list<IUser>('users')
-  }
-
-  async findAllUsersBy(filter: Record<string, unknown>): Promise<IUser[]> {
-    return await this.list<IUser>('users', filter)
+  async getUsers(
+    query: Record<string, unknown> = {},
+    perPage = 50,
+    page = 1
+  ): Promise<IUser[]> {
+    return await this.list<IUser>('users', query, {}, perPage, page)
   }
 
   async getUserSettings(id: number): Promise<IUserSettings> {

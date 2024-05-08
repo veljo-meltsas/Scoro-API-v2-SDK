@@ -7,8 +7,12 @@ export class PrepaymentsService extends APIClient {
     return await this.view<IPrepayment>('prepayments', id)
   }
 
-  async getPrepayments(): Promise<IPrepayment[]> {
-    return await this.list<IPrepayment>('prepayments')
+  async getPrepayments(
+    query: Record<string, unknown> = {},
+    perPage = 50,
+    page = 1
+  ): Promise<IPrepayment[]> {
+    return await this.list<IPrepayment>('prepayments', query, {}, perPage, page)
   }
 
   async updatePrepayment(
@@ -24,12 +28,6 @@ export class PrepaymentsService extends APIClient {
 
   async deletePrepayment(id: number): Promise<void> {
     await this.delete('prepayments', id)
-  }
-
-  async findAllPrepaymentsBy(
-    filters: Record<string, any>
-  ): Promise<IPrepayment[]> {
-    return await this.list<IPrepayment>('prepayments', filters)
   }
 
   async getPdf(id: number): Promise<IDocPdf> {

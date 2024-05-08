@@ -7,9 +7,17 @@ export class ClientProfileService extends APIClient {
   }
 
   async findAllClientProfilesBy(
-    filters: Record<string, any>
+    filters: Record<string, any>,
+    perPage = 50,
+    page = 1
   ): Promise<IClientProfile[]> {
-    return await this.list<IClientProfile>('clientProfiles', filters)
+    return await this.list<IClientProfile>(
+      'clientProfiles',
+      filters,
+      {},
+      perPage,
+      page
+    )
   }
 
   async getClientProfile(id: number): Promise<IClientProfile> {

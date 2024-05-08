@@ -6,8 +6,12 @@ export class TaskService extends APIClient {
     return await this.view<ITask>('tasks', id)
   }
 
-  async getTasks(): Promise<ITask[]> {
-    return await this.list<ITask>('tasks')
+  async getTasks(
+    query: Record<string, unknown> = {},
+    perPage = 50,
+    page = 1
+  ): Promise<ITask[]> {
+    return await this.list<ITask>('tasks', query, {}, perPage, page)
   }
 
   async createTask(task: Partial<ITask>): Promise<ITask> {
@@ -20,21 +24,5 @@ export class TaskService extends APIClient {
 
   async deleteTask(id: number): Promise<void> {
     await this.delete('tasks', id)
-  }
-
-  async findAllByPersonId(personId: number): Promise<ITask[]> {
-    return await this.list<ITask>('tasks', { person_id: personId })
-  }
-
-  async findAllByCompanyId(companyId: number): Promise<ITask[]> {
-    return await this.list<ITask>('tasks', { company_id: companyId })
-  }
-
-  async findAllByProjectId(projectId: number): Promise<ITask[]> {
-    return await this.list<ITask>('tasks', { project_id: projectId })
-  }
-
-  async findAllTasksBy(filter: Record<string, unknown>): Promise<ITask[]> {
-    return await this.list<ITask>('tasks', filter)
   }
 }

@@ -2,8 +2,12 @@ import { APIClient } from './../../base'
 import type { IActivity } from './types/activity.type'
 
 export class ActivityService extends APIClient {
-  async getActivities(): Promise<IActivity[]> {
-    return await this.list<IActivity>('activities')
+  async getActivities(
+    query: Record<string, unknown> = {},
+    perPage = 50,
+    page = 1
+  ): Promise<IActivity[]> {
+    return await this.list<IActivity>('activities', query, {}, perPage, page)
   }
 
   async getActivity(id: number): Promise<IActivity> {
@@ -23,11 +27,5 @@ export class ActivityService extends APIClient {
 
   async deleteActivity(id: number): Promise<void> {
     await this.delete('activities', id)
-  }
-
-  async findAllActivitiesBy(
-    query: Record<string, unknown>
-  ): Promise<IActivity[]> {
-    return await this.list<IActivity>('activities', query)
   }
 }

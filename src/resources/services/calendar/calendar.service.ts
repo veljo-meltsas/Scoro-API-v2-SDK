@@ -7,9 +7,11 @@ export class CalendarService extends APIClient {
   }
 
   async findAllCalendarEventsBy(
-    filters: Record<string, any>
+    filters: Record<string, any>,
+    perPage = 50,
+    page = 1
   ): Promise<ICalendar[]> {
-    return await this.list<ICalendar>('calendar', filters)
+    return await this.list<ICalendar>('calendar', filters, {}, perPage, page)
   }
 
   async getCalendarById(id: number): Promise<ICalendar> {

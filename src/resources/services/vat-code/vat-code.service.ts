@@ -2,12 +2,12 @@ import { APIClient } from '../../base'
 import { IVatCode } from './types/vat-code.type'
 
 export class VatCodeService extends APIClient {
-  async getVatCodes(): Promise<IVatCode[]> {
-    return await this.list<IVatCode>('vatCodes')
-  }
-
-  async findAllVatCodesBy(filters: Record<string, any>): Promise<IVatCode[]> {
-    return await this.list<IVatCode>('vatCodes', filters)
+  async getVatCodes(
+    query: Record<string, unknown> = {},
+    perPage = 50,
+    page = 1
+  ): Promise<IVatCode[]> {
+    return await this.list<IVatCode>('vatCodes', query, {}, perPage, page)
   }
 
   async getVatCode(id: number): Promise<IVatCode> {

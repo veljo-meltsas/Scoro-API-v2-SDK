@@ -131,6 +131,8 @@ describe('APIClient', () => {
           filter: { name: 'John' },
           request: {},
           per_page: 10,
+          page: 1,
+          detailed_response: true,
         }),
       }
     )
@@ -313,6 +315,9 @@ describe('APIClient', () => {
         body: JSON.stringify({
           ...apiClient.getPayload,
           request: { done: true },
+          filter: {},
+          per_page: 50,
+          page: 1,
         }),
       }
     )

@@ -13,14 +13,18 @@ export class UserLaborCostService extends APIClient {
     )
   }
 
-  async getUserLaborCosts(): Promise<IUserLaborCost[]> {
-    return await this.list<IUserLaborCost>('usersLaborCost')
-  }
-
-  async findAllUserLaborCostsBy(
-    filters: Record<string, any>
+  async getUserLaborCosts(
+    query: Record<string, unknown> = {},
+    perPage = 50,
+    page = 1
   ): Promise<IUserLaborCost[]> {
-    return await this.list<IUserLaborCost>('usersLaborCost', filters)
+    return await this.list<IUserLaborCost>(
+      'usersLaborCost',
+      query,
+      {},
+      perPage,
+      page
+    )
   }
 
   async getUserLaborCostById(userLaborCostId: number): Promise<IUserLaborCost> {

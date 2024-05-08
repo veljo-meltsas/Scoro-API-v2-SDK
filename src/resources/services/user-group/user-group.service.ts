@@ -2,14 +2,12 @@ import { APIClient } from '../../base'
 import { IUserGroup } from './types/user-group.type'
 
 export class UserGroupService extends APIClient {
-  async getUserGroups(): Promise<IUserGroup[]> {
-    return await this.list<IUserGroup>('userGroups')
-  }
-
-  async findAllUserGroupsBy(
-    filters: Record<string, any>
+  async getUserGroups(
+    query: Record<string, unknown> = {},
+    perPage = 50,
+    page = 1
   ): Promise<IUserGroup[]> {
-    return await this.list<IUserGroup>('userGroups', filters)
+    return await this.list<IUserGroup>('userGroups', query, {}, perPage, page)
   }
 
   async getUserGroupById(userGroupId: number): Promise<IUserGroup> {

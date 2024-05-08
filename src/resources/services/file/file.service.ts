@@ -3,8 +3,12 @@ import { IFileUpload } from './types/file-upload.type'
 import { IFile } from './types/file.type'
 
 export class FileService extends APIClient {
-  async getFiles(): Promise<IFile[]> {
-    return await this.list<IFile>('files')
+  async getFiles(
+    query: Record<string, unknown> = {},
+    perPage = 50,
+    page = 1
+  ): Promise<IFile[]> {
+    return await this.list<IFile>('files', query, {}, perPage, page)
   }
 
   async createFile(data: Partial<IFile>): Promise<IFile> {
@@ -37,9 +41,5 @@ export class FileService extends APIClient {
 
   async uploadFile(data: Partial<IFileUpload>): Promise<void> {
     await this.customCallWithBody('files', 'modify', data)
-  }
-
-  async findAllFilesBy(filters: Record<string, any>): Promise<IFile[]> {
-    return await this.list<IFile>('files', filters)
   }
 }

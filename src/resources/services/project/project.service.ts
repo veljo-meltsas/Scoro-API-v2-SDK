@@ -3,8 +3,12 @@ import { IProjectRelatedObjects } from './types/project-related-object.type'
 import type { IProject } from './types/project.type'
 
 export class ProjectService extends APIClient {
-  async getProjects(): Promise<IProject[]> {
-    return await this.list<IProject>('projects')
+  async getProjects(
+    query: Record<string, unknown> = {},
+    perPage = 50,
+    page = 1
+  ): Promise<IProject[]> {
+    return await this.list<IProject>('projects', query, {}, perPage, page)
   }
 
   async getProject(id: number): Promise<IProject> {
@@ -23,20 +27,8 @@ export class ProjectService extends APIClient {
     await this.delete('projects', id)
   }
 
-  async getActiveProjects(): Promise<IProject[]> {
-    return await this.list<IProject>('projects', { status: 'inprogress' })
-  }
-
-  async getCompletedProjects(): Promise<IProject[]> {
-    return await this.list<IProject>('projects', { status: 'completed' })
-  }
-
-  async findAllProjectsBy(query: Record<string, unknown>): Promise<IProject[]> {
-    return await this.list<IProject>('projects', query)
-  }
-
   async getRelatedObjects(id: number): Promise<IProjectRelatedObjects> {
-    return this.customCallWithouBodyAndId<IProjectRelatedObjects>(
+    return await this.customCallWithouBodyAndId<IProjectRelatedObjects>(
       'projects',
       'getRelatedObjects',
       id

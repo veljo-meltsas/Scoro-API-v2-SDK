@@ -2,13 +2,17 @@ import { APIClient } from '../../base'
 import { IReceiptAccount } from './types/receipt-account.type'
 
 export class ReceiptAccountsService extends APIClient {
-  async getReceiptAccounts(): Promise<IReceiptAccount[]> {
-    return await this.list<IReceiptAccount>('receiptAccounts')
-  }
-
-  async findAllReceiptAccountsBy(
-    filters: Record<string, any>
+  async getReceiptAccounts(
+    query: Record<string, unknown> = {},
+    perPage = 50,
+    page = 1
   ): Promise<IReceiptAccount[]> {
-    return await this.list<IReceiptAccount>('receiptAccounts', filters)
+    return await this.list<IReceiptAccount>(
+      'receiptAccounts',
+      query,
+      {},
+      perPage,
+      page
+    )
   }
 }

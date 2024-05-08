@@ -7,8 +7,12 @@ export class ExpensesService extends APIClient {
     return await this.view<IExpense>('expenses', id)
   }
 
-  async getExpenses(): Promise<IExpense[]> {
-    return await this.list<IExpense>('expenses')
+  async getExpenses(
+    query: Record<string, unknown> = {},
+    perPage = 50,
+    page = 1
+  ): Promise<IExpense[]> {
+    return await this.list<IExpense>('expenses', query, {}, perPage, page)
   }
 
   async updateExpense(
@@ -24,9 +28,5 @@ export class ExpensesService extends APIClient {
 
   async deleteExpense(id: number): Promise<void> {
     await this.delete('expenses', id)
-  }
-
-  async findAllExpensesBy(filters: Record<string, any>): Promise<IExpense[]> {
-    return await this.list<IExpense>('expenses', filters)
   }
 }

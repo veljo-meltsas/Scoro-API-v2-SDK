@@ -6,13 +6,17 @@ export class EventResourceService extends APIClient {
     return await this.view<IEventResource>('eventsResources', id)
   }
 
-  async getEventsResources(): Promise<IEventResource[]> {
-    return await this.list<IEventResource>('eventsResources')
-  }
-
-  async findAllEventsResourcesBy(
-    filters: Record<string, any>
+  async getEventsResources(
+    query: Record<string, unknown> = {},
+    perPage = 50,
+    page = 1
   ): Promise<IEventResource[]> {
-    return await this.list<IEventResource>('eventsResources', filters)
+    return await this.list<IEventResource>(
+      'eventsResources',
+      query,
+      {},
+      perPage,
+      page
+    )
   }
 }

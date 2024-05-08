@@ -2,8 +2,12 @@ import { APIClient } from '../../base'
 import { IReceiptGroup } from './types/receipt-group.type'
 
 export class ReceiptGroupsService extends APIClient {
-  async getReceiptGroups(): Promise<IReceiptGroup[]> {
-    return await this.list<IReceiptGroup>('receipts')
+  async getReceiptGroups(
+    query: Record<string, unknown> = {},
+    perPage = 50,
+    page = 1
+  ): Promise<IReceiptGroup[]> {
+    return await this.list<IReceiptGroup>('receipts', query, {}, perPage, page)
   }
 
   async updateReceiptGroup(
@@ -15,11 +19,5 @@ export class ReceiptGroupsService extends APIClient {
 
   async deleteReceiptGroup(id: number): Promise<void> {
     await this.delete('receipts', id)
-  }
-
-  async findAllReceiptGroupsBy(
-    filters: Record<string, any>
-  ): Promise<IReceiptGroup[]> {
-    return await this.list<IReceiptGroup>('receipts', filters)
   }
 }

@@ -3,28 +3,32 @@ import { IContactRelatedObjects } from './types/contact-related-object.type'
 import { IContact } from './types/contact.type'
 
 export class ContactService extends APIClient {
-  async getContacts(filters: Record<string, any> = {}): Promise<IContact[]> {
-    return this.list<IContact>('contacts', filters)
+  async getContacts(
+    filters: Record<string, any> = {},
+    perPage = 50,
+    page = 1
+  ): Promise<IContact[]> {
+    return await this.list<IContact>('contacts', filters, {}, perPage, page)
   }
 
   async viewContact(id: number): Promise<IContact> {
-    return this.view<IContact>('contacts', id)
+    return await this.view<IContact>('contacts', id)
   }
 
   async createContact(contact: IContact): Promise<IContact> {
-    return this.create<IContact>('contacts', contact)
+    return await this.create<IContact>('contacts', contact)
   }
 
   async updateContact(id: number, contact: IContact): Promise<IContact> {
-    return this.update<IContact>('contacts', id, contact)
+    return await this.update<IContact>('contacts', id, contact)
   }
 
   async deleteContact(id: number): Promise<void> {
-    return this.delete('contacts', id)
+    return await this.delete('contacts', id)
   }
 
   async getRelatedObjects(id: number): Promise<IContactRelatedObjects> {
-    return this.customCallWithouBodyAndId<IContactRelatedObjects>(
+    return await this.customCallWithouBodyAndId<IContactRelatedObjects>(
       'contacts',
       'getRelatedObjects',
       id
@@ -32,6 +36,6 @@ export class ContactService extends APIClient {
   }
 
   async findAllContactsBy(filters: Record<string, any>): Promise<IContact[]> {
-    return this.list<IContact>('contacts', filters)
+    return await this.list<IContact>('contacts', filters)
   }
 }

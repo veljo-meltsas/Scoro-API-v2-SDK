@@ -7,8 +7,18 @@ export class PurchaseOrdersService extends APIClient {
     return await this.view<IPurchaseOrder>('purchaseOrders', id)
   }
 
-  async getPurchaseOrders(): Promise<IPurchaseOrder[]> {
-    return await this.list<IPurchaseOrder>('purchaseOrders')
+  async getPurchaseOrders(
+    query: Record<string, unknown> = {},
+    perPage = 50,
+    page = 1
+  ): Promise<IPurchaseOrder[]> {
+    return await this.list<IPurchaseOrder>(
+      'purchaseOrders',
+      query,
+      {},
+      perPage,
+      page
+    )
   }
 
   async updatePurchaseOrder(
@@ -26,12 +36,6 @@ export class PurchaseOrdersService extends APIClient {
 
   async deletePurchaseOrder(id: number): Promise<void> {
     await this.delete('purchaseOrders', id)
-  }
-
-  async findAllPurchaseOrdersBy(
-    filters: Record<string, any>
-  ): Promise<IPurchaseOrder[]> {
-    return await this.list<IPurchaseOrder>('purchaseOrders', filters)
   }
 
   async getPdf(id: number): Promise<IDocPdf> {

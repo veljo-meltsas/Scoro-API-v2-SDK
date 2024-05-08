@@ -6,8 +6,18 @@ export class ScheduledInvoiceService extends APIClient {
     return await this.view<IScheduledInvoice>('scheduledInvoices', id)
   }
 
-  async getScheduledInvoices(): Promise<IScheduledInvoice[]> {
-    return await this.list<IScheduledInvoice>('scheduledInvoices')
+  async getScheduledInvoices(
+    query: Record<string, unknown> = {},
+    perPage = 50,
+    page = 1
+  ): Promise<IScheduledInvoice[]> {
+    return await this.list<IScheduledInvoice>(
+      'scheduledInvoices',
+      query,
+      {},
+      perPage,
+      page
+    )
   }
 
   async updateScheduledInvoice(
@@ -25,11 +35,5 @@ export class ScheduledInvoiceService extends APIClient {
 
   async deleteScheduledInvoice(id: number): Promise<void> {
     await this.delete('scheduledInvoices', id)
-  }
-
-  async findAllScheduledInvoicesBy(
-    filters: Record<string, any>
-  ): Promise<IScheduledInvoice[]> {
-    return await this.list<IScheduledInvoice>('scheduledInvoices', filters)
   }
 }

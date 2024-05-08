@@ -7,8 +7,12 @@ export class OrdersService extends APIClient {
     return await this.view<IOrder>('orders', id)
   }
 
-  async getOrders(): Promise<IOrder[]> {
-    return await this.list<IOrder>('orders')
+  async getOrders(
+    query: Record<string, unknown> = {},
+    perPage = 50,
+    page = 1
+  ): Promise<IOrder[]> {
+    return await this.list<IOrder>('orders', query, {}, perPage, page)
   }
 
   async updateOrder(id: number, data: Record<string, unknown>): Promise<void> {
@@ -21,10 +25,6 @@ export class OrdersService extends APIClient {
 
   async deleteOrder(id: number): Promise<void> {
     await this.delete('orders', id)
-  }
-
-  async findAllOrdersBy(filters: Record<string, any>): Promise<IOrder[]> {
-    return await this.list<IOrder>('orders', filters)
   }
 
   async getPdf(id: number): Promise<IDocPdf> {

@@ -2,14 +2,12 @@ import { APIClient } from '../../base'
 import { ITimeEntry } from './types/time-entry.type'
 
 export class TimeEntryService extends APIClient {
-  async getTimeEntries(): Promise<ITimeEntry[]> {
-    return await this.list<ITimeEntry>('timeEntries')
-  }
-
-  async findAllTimeEntriesBy(
-    filters: Record<string, any>
+  async getTimeEntries(
+    query: Record<string, unknown> = {},
+    perPage = 50,
+    page = 1
   ): Promise<ITimeEntry[]> {
-    return await this.list<ITimeEntry>('timeEntries', filters)
+    return await this.list<ITimeEntry>('timeEntries', query, {}, perPage, page)
   }
 
   async createTimeEntry(data: Partial<ITimeEntry>): Promise<ITimeEntry> {

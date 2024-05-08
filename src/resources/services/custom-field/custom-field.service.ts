@@ -2,13 +2,17 @@ import { APIClient } from '../../base'
 import { ICustomField } from './types/custom-field.type'
 
 export class CustomFieldService extends APIClient {
-  async getCustomFields(): Promise<ICustomField[]> {
-    return await this.list<ICustomField>('customFields')
-  }
-
-  async findAllCustomFieldsBy(
-    filters: Record<string, any>
+  async getCustomFields(
+    query: Record<string, unknown> = {},
+    perPage = 50,
+    page = 1
   ): Promise<ICustomField[]> {
-    return await this.list<ICustomField>('customFields', filters)
+    return await this.list<ICustomField>(
+      'customFields',
+      query,
+      {},
+      perPage,
+      page
+    )
   }
 }

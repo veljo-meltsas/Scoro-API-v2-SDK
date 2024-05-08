@@ -7,8 +7,12 @@ export class QuoteService extends APIClient {
     return await this.view<IQuote>('quotes', id)
   }
 
-  async getQuotes(): Promise<IQuote[]> {
-    return await this.list<IQuote>('quotes')
+  async getQuotes(
+    query: Record<string, unknown> = {},
+    perPage = 50,
+    page = 1
+  ): Promise<IQuote[]> {
+    return await this.list<IQuote>('quotes', query, {}, perPage, page)
   }
 
   async updateQuote(id: number, data: Record<string, unknown>): Promise<void> {
@@ -21,10 +25,6 @@ export class QuoteService extends APIClient {
 
   async deleteQuote(id: number): Promise<void> {
     await this.delete('quotes', id)
-  }
-
-  async findAllQuotesBy(filters: Record<string, any>): Promise<IQuote[]> {
-    return await this.list<IQuote>('quotes', filters)
   }
 
   async getPdf(id: number): Promise<IDocPdf> {
