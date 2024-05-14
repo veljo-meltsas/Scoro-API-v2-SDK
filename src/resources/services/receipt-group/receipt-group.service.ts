@@ -3,7 +3,7 @@ import { IReceiptGroup } from './types/receipt-group.type'
 
 export class ReceiptGroupsService extends APIClient {
   async getReceiptGroups(
-    query: Record<string, unknown> = {},
+    query: Record<string, any> = {},
     perPage = 50,
     page = 1
   ): Promise<IReceiptGroup[]> {

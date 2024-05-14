@@ -8,7 +8,7 @@ export class OrdersService extends APIClient {
   }
 
   async getOrders(
-    query: Record<string, unknown> = {},
+    query: Record<string, any> = {},
     perPage = 50,
     page = 1
   ): Promise<IOrder[]> {

@@ -3,7 +3,7 @@ import { IVatCode } from './types/vat-code.type'
 
 export class VatCodeService extends APIClient {
   async getVatCodes(
-    query: Record<string, unknown> = {},
+    query: Record<string, any> = {},
     perPage = 50,
     page = 1
   ): Promise<IVatCode[]> {

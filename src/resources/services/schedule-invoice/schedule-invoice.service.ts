@@ -7,7 +7,7 @@ export class ScheduledInvoiceService extends APIClient {
   }
 
   async getScheduledInvoices(
-    query: Record<string, unknown> = {},
+    query: Record<string, any> = {},
     perPage = 50,
     page = 1
   ): Promise<IScheduledInvoice[]> {

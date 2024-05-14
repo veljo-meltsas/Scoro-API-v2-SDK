@@ -8,7 +8,7 @@ export class ExpensesService extends APIClient {
   }
 
   async getExpenses(
-    query: Record<string, unknown> = {},
+    query: Record<string, any> = {},
     perPage = 50,
     page = 1
   ): Promise<IExpense[]> {

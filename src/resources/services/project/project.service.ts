@@ -4,7 +4,7 @@ import type { IProject } from './types/project.type'
 
 export class ProjectService extends APIClient {
   async getProjects(
-    query: Record<string, unknown> = {},
+    query: Record<string, any> = {},
     perPage = 50,
     page = 1
   ): Promise<IProject[]> {

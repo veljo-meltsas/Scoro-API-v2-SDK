@@ -15,7 +15,7 @@ export class WebhookService extends APIClient {
   }
 
   async getWebhooks(
-    query: Record<string, unknown> = {},
+    query: Record<string, any> = {},
     perPage = 50,
     page = 1
   ): Promise<IWebhook[]> {

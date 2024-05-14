@@ -4,7 +4,7 @@ import { IFile } from './types/file.type'
 
 export class FileService extends APIClient {
   async getFiles(
-    query: Record<string, unknown> = {},
+    query: Record<string, any> = {},
     perPage = 50,
     page = 1
   ): Promise<IFile[]> {

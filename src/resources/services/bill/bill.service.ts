@@ -7,7 +7,7 @@ export class BillsService extends APIClient {
   }
 
   async getBills(
-    query: Record<string, unknown> = {},
+    query: Record<string, any> = {},
     perPage = 50,
     page = 1
   ): Promise<IBill[]> {

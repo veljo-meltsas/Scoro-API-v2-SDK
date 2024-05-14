@@ -3,7 +3,7 @@ import type { IProductGroup } from './types/product-group.type'
 
 export class ProductGroupService extends APIClient {
   async getProductGroups(
-    query: Record<string, unknown> = {},
+    query: Record<string, any> = {},
     perPage = 50,
     page = 1
   ): Promise<IProductGroup[]> {

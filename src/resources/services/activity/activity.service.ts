@@ -3,7 +3,7 @@ import type { IActivity } from './types/activity.type'
 
 export class ActivityService extends APIClient {
   async getActivities(
-    query: Record<string, unknown> = {},
+    query: Record<string, any> = {},
     perPage = 50,
     page = 1
   ): Promise<IActivity[]> {
