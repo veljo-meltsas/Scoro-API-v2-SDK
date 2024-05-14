@@ -3,7 +3,7 @@ import { IPDFTemplate } from './types/pdf-template.type'
 
 export class PDFTemplateService extends APIClient {
   async getPDFTemplates(
-    query: Record<string, unknown> = {},
+    query: Record<string, any> = {},
     perPage = 50,
     page = 1
   ): Promise<IPDFTemplate[]> {

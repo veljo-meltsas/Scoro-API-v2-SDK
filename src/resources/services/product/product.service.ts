@@ -3,7 +3,7 @@ import type { IProduct } from './types/product.type'
 
 export class ProductService extends APIClient {
   async getProducts(
-    query: Record<string, unknown> = {},
+    query: Record<string, any> = {},
     perPage = 50,
     page = 1
   ): Promise<IProduct[]> {

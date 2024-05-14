@@ -3,7 +3,7 @@ import { IAccountingObject } from './types/finance-object.type'
 
 export class FinanceObjectService extends APIClient {
   async getFinanceObjects(
-    query: Record<string, unknown> = {},
+    query: Record<string, any> = {},
     perPage = 50,
     page = 1
   ): Promise<IAccountingObject[]> {

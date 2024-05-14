@@ -7,7 +7,7 @@ export class TaskService extends APIClient {
   }
 
   async getTasks(
-    query: Record<string, unknown> = {},
+    query: Record<string, any> = {},
     perPage = 50,
     page = 1
   ): Promise<ITask[]> {

@@ -3,7 +3,7 @@ import type { INotification } from './types/notification.type'
 
 export class NotificationService extends APIClient {
   async getNotifications(
-    query: Record<string, unknown> = {},
+    query: Record<string, any> = {},
     perPage = 50,
     page = 1
   ): Promise<INotification[]> {

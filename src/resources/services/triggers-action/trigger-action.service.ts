@@ -3,7 +3,7 @@ import { ITriggerAction } from './types/trigger-action.type'
 
 export class TriggerActionService extends APIClient {
   async getTriggerActions(
-    query: Record<string, unknown> = {},
+    query: Record<string, any> = {},
     perPage = 50,
     page = 1
   ): Promise<ITriggerAction[]> {

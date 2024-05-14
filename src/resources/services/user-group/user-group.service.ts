@@ -3,7 +3,7 @@ import { IUserGroup } from './types/user-group.type'
 
 export class UserGroupService extends APIClient {
   async getUserGroups(
-    query: Record<string, unknown> = {},
+    query: Record<string, any> = {},
     perPage = 50,
     page = 1
   ): Promise<IUserGroup[]> {

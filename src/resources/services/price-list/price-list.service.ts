@@ -7,7 +7,7 @@ export class PriceListService extends APIClient {
   }
 
   async getPriceLists(
-    query: Record<string, unknown> = {},
+    query: Record<string, any> = {},
     perPage = 50,
     page = 1
   ): Promise<IPriceList[]> {

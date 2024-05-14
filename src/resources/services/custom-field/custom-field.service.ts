@@ -3,7 +3,7 @@ import { ICustomField } from './types/custom-field.type'
 
 export class CustomFieldService extends APIClient {
   async getCustomFields(
-    query: Record<string, unknown> = {},
+    query: Record<string, any> = {},
     perPage = 50,
     page = 1
   ): Promise<ICustomField[]> {

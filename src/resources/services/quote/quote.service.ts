@@ -8,7 +8,7 @@ export class QuoteService extends APIClient {
   }
 
   async getQuotes(
-    query: Record<string, unknown> = {},
+    query: Record<string, any> = {},
     perPage = 50,
     page = 1
   ): Promise<IQuote[]> {

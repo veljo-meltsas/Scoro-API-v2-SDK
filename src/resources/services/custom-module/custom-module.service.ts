@@ -3,7 +3,7 @@ import { ICustomModule } from './types/custom-module.type'
 
 export class CustomModuleService extends APIClient {
   async getCustomModules(
-    query: Record<string, unknown> = {},
+    query: Record<string, any> = {},
     perPage = 50,
     page = 1
   ): Promise<ICustomModule[]> {

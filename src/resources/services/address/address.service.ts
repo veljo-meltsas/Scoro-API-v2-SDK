@@ -3,7 +3,7 @@ import type { IAddress } from './types/address.type'
 
 export class AddressService extends APIClient {
   async getAddresss(
-    query: Record<string, unknown> = {},
+    query: Record<string, any> = {},
     perPage = 50,
     page = 1
   ): Promise<IAddress[]> {

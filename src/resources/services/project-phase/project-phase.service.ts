@@ -3,7 +3,7 @@ import type { IProjectPhase } from './types/project-phase.type'
 
 export class ProjectPhaseService extends APIClient {
   async getProjectPhases(
-    query: Record<string, unknown> = {},
+    query: Record<string, any> = {},
     perPage = 50,
     page = 1
   ): Promise<IProjectPhase[]> {

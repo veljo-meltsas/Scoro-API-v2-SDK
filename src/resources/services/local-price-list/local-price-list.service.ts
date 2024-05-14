@@ -3,7 +3,7 @@ import type { ILocalPriceList } from './types/local-price-list.type'
 
 export class LocalPriceListService extends APIClient {
   async getLocalPriceLists(
-    query: Record<string, unknown> = {},
+    query: Record<string, any> = {},
     perPage = 50,
     page = 1
   ): Promise<ILocalPriceList[]> {
