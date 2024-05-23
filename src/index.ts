@@ -50,56 +50,56 @@ import { WebhookService } from './resources/services/webhook/webhook.service'
 import type { IApiPayload, IConfig } from './resources/types/api.type'
 
 export class ScoroUserAPI {
-  activity: ActivityService
-  address: AddressService
-  bill: BillsService
-  bookmark: BookmarkService
-  calendar: CalendarService
-  category: CategoryService
-  clientProfile: ClientProfileService
-  comment: CommentService
-  companyAccount: CompanyAccountService
-  contact: ContactService
-  customField: CustomFieldService
-  customModule: CustomModuleService
-  depot: DepotService
-  eventResource: EventResourceService
-  expense: ExpensesService
-  file: FileService
-  financeAccount: FinanceAccountService
-  financeObject: FinanceObjectService
-  invoice: InvoicesService
-  localPriceList: LocalPriceListService
-  notification: NotificationService
-  order: OrdersService
-  pdfTemplate: PDFTemplateService
-  prepayment: PrepaymentsService
-  priceList: PriceListService
-  product: ProjectService
-  productGroup: ProductGroupService
-  project: ProjectService
-  projectPhase: ProjectPhaseService
-  purchaseOrder: PurchaseOrdersService
-  quote: QuoteService
-  receiptAccount: ReceiptAccountsService
-  receiptGroup: ReceiptGroupsService
-  relation: RelationService
-  relationType: RelationTypeService
-  rolePrice: RolePriceService
-  scheduleInvoice: ScheduledInvoiceService
-  search: SearchService
-  sendLog: SendLogService
-  status: StatusService
-  tag: TagService
-  task: TaskService
-  timeEntry: TimeEntryService
-  triggerAction: TriggerActionService
-  user: UserService
-  userGroup: UserGroupService
-  userLaborCost: UserLaborCostService
-  userRole: UserRoleService
-  vatCode: VatCodeService
-  webhook: WebhookService
+  readonly activity: ActivityService
+  readonly address: AddressService
+  readonly bill: BillsService
+  readonly bookmark: BookmarkService
+  readonly calendar: CalendarService
+  readonly category: CategoryService
+  readonly clientProfile: ClientProfileService
+  readonly comment: CommentService
+  readonly companyAccount: CompanyAccountService
+  readonly contact: ContactService
+  readonly customField: CustomFieldService
+  readonly customModule: CustomModuleService
+  readonly depot: DepotService
+  readonly eventResource: EventResourceService
+  readonly expense: ExpensesService
+  readonly file: FileService
+  readonly financeAccount: FinanceAccountService
+  readonly financeObject: FinanceObjectService
+  readonly invoice: InvoicesService
+  readonly localPriceList: LocalPriceListService
+  readonly notification: NotificationService
+  readonly order: OrdersService
+  readonly pdfTemplate: PDFTemplateService
+  readonly prepayment: PrepaymentsService
+  readonly priceList: PriceListService
+  readonly product: ProjectService
+  readonly productGroup: ProductGroupService
+  readonly project: ProjectService
+  readonly projectPhase: ProjectPhaseService
+  readonly purchaseOrder: PurchaseOrdersService
+  readonly quote: QuoteService
+  readonly receiptAccount: ReceiptAccountsService
+  readonly receiptGroup: ReceiptGroupsService
+  readonly relation: RelationService
+  readonly relationType: RelationTypeService
+  readonly rolePrice: RolePriceService
+  readonly scheduleInvoice: ScheduledInvoiceService
+  readonly search: SearchService
+  readonly sendLog: SendLogService
+  readonly status: StatusService
+  readonly tag: TagService
+  readonly task: TaskService
+  readonly timeEntry: TimeEntryService
+  readonly triggerAction: TriggerActionService
+  readonly user: UserService
+  readonly userGroup: UserGroupService
+  readonly userLaborCost: UserLaborCostService
+  readonly userRole: UserRoleService
+  readonly vatCode: VatCodeService
+  readonly webhook: WebhookService
 
   constructor(config: IConfig) {
     const serviceConfig: IApiPayload = {
@@ -181,56 +181,56 @@ export class ScoroUserAPI {
 }
 
 export class ScoroCompanyAPI {
-  activity: ActivityService
-  address: AddressService
-  bill: BillsService
-  bookmark: BookmarkService
-  calendar: CalendarService
-  category: CategoryService
-  clientProfile: ClientProfileService
-  comment: CommentService
-  companyAccount: CompanyAccountService
-  contact: ContactService
-  customField: CustomFieldService
-  customModule: CustomModuleService
-  depot: DepotService
-  eventResource: EventResourceService
-  expense: ExpensesService
-  file: FileService
-  financeAccount: FinanceAccountService
-  financeObject: FinanceObjectService
-  invoice: InvoicesService
-  localPriceList: LocalPriceListService
-  notification: NotificationService
-  order: OrdersService
-  pdfTemplate: PDFTemplateService
-  prepayment: PrepaymentsService
-  priceList: PriceListService
-  product: ProjectService
-  productGroup: ProductGroupService
-  project: ProjectService
-  projectPhase: ProjectPhaseService
-  purchaseOrder: PurchaseOrdersService
-  quote: QuoteService
-  receiptAccount: ReceiptAccountsService
-  receiptGroup: ReceiptGroupsService
-  relation: RelationService
-  relationType: RelationTypeService
-  rolePrice: RolePriceService
-  scheduleInvoice: ScheduledInvoiceService
-  search: SearchService
-  sendLog: SendLogService
-  status: StatusService
-  tag: TagService
-  task: TaskService
-  timeEntry: TimeEntryService
-  triggerAction: TriggerActionService
-  user: UserService
-  userGroup: UserGroupService
-  userLaborCost: UserLaborCostService
-  userRole: UserRoleService
-  vatCode: VatCodeService
-  webhook: WebhookService
+  readonly activity: ActivityService
+  readonly address: AddressService
+  readonly bill: BillsService
+  readonly bookmark: BookmarkService
+  readonly calendar: CalendarService
+  readonly category: CategoryService
+  readonly clientProfile: ClientProfileService
+  readonly comment: CommentService
+  readonly companyAccount: CompanyAccountService
+  readonly contact: ContactService
+  readonly customField: CustomFieldService
+  readonly customModule: CustomModuleService
+  readonly depot: DepotService
+  readonly eventResource: EventResourceService
+  readonly expense: ExpensesService
+  readonly file: FileService
+  readonly financeAccount: FinanceAccountService
+  readonly financeObject: FinanceObjectService
+  readonly invoice: InvoicesService
+  readonly localPriceList: LocalPriceListService
+  readonly notification: NotificationService
+  readonly order: OrdersService
+  readonly pdfTemplate: PDFTemplateService
+  readonly prepayment: PrepaymentsService
+  readonly priceList: PriceListService
+  readonly product: ProjectService
+  readonly productGroup: ProductGroupService
+  readonly project: ProjectService
+  readonly projectPhase: ProjectPhaseService
+  readonly purchaseOrder: PurchaseOrdersService
+  readonly quote: QuoteService
+  readonly receiptAccount: ReceiptAccountsService
+  readonly receiptGroup: ReceiptGroupsService
+  readonly relation: RelationService
+  readonly relationType: RelationTypeService
+  readonly rolePrice: RolePriceService
+  readonly scheduleInvoice: ScheduledInvoiceService
+  readonly search: SearchService
+  readonly sendLog: SendLogService
+  readonly status: StatusService
+  readonly tag: TagService
+  readonly task: TaskService
+  readonly timeEntry: TimeEntryService
+  readonly triggerAction: TriggerActionService
+  readonly user: UserService
+  readonly userGroup: UserGroupService
+  readonly userLaborCost: UserLaborCostService
+  readonly userRole: UserRoleService
+  readonly vatCode: VatCodeService
+  readonly webhook: WebhookService
 
   constructor(config: IConfig) {
     const serviceConfig: IApiPayload = {
