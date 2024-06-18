@@ -2,7 +2,6 @@
  * @type {import('semantic-release').GlobalConfig}
  */
 module.exports = {
-    extends: "@jedmao/semantic-release-npm-github-config",
     branches: ["main"],
     plugins: [
         "@semantic-release/commit-analyzer",
