@@ -1,6 +1,18 @@
 # [1.5.0](https://github.com/andrerampanelli/Scoro-API-v2-SDK/compare/v1.4.0...v1.5.0) (2024-06-18)
 
 
+### Bug Fixes
+
+* add path mappings in tsconfig ([b1b6703](https://github.com/andrerampanelli/Scoro-API-v2-SDK/commit/b1b67030ce7b957b522c77f68a712082e0201e54))
+
+
+### Features
+
+* improve documentation ([7ca2a06](https://github.com/andrerampanelli/Scoro-API-v2-SDK/commit/7ca2a063fcfdf0bde8ab08c13292ec11e3e3944f))
+
+# [1.5.0](https://github.com/andrerampanelli/Scoro-API-v2-SDK/compare/v1.4.0...v1.5.0) (2024-06-18)
+
+
 ### Features
 
 * improve documentation ([7ca2a06](https://github.com/andrerampanelli/Scoro-API-v2-SDK/commit/7ca2a063fcfdf0bde8ab08c13292ec11e3e3944f))
