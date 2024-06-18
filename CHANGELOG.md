@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/andrerampanelli/Scoro-API-v2-SDK/compare/v1.4.0...v1.5.0) (2024-06-18)
+
+
+### Features
+
+* improve documentation ([7ca2a06](https://github.com/andrerampanelli/Scoro-API-v2-SDK/commit/7ca2a063fcfdf0bde8ab08c13292ec11e3e3944f))
+
 # 1.0.0 (2024-06-18)
 
 
