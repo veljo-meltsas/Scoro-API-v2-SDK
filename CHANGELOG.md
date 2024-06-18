@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/andrerampanelli/Scoro-API-v2-SDK/compare/v1.5.0...v1.5.1) (2024-06-18)
+
+
+### Bug Fixes
+
+* **paths:** resolve path aliases on build ([2454ef7](https://github.com/andrerampanelli/Scoro-API-v2-SDK/commit/2454ef7ff01faced532f3a9143179c37758a90c4))
+
 # [1.5.0](https://github.com/andrerampanelli/Scoro-API-v2-SDK/compare/v1.4.0...v1.5.0) (2024-06-18)
 
 
