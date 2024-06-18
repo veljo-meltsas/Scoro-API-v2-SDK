@@ -44,12 +44,12 @@ const filteredUsers = await companySDK.user.getUsers({
     email: 'user@email.com' // The query passed inside the function is passing to the API inside the filters object
 })
 
+// Scoro API has a default limit of 50 per page, this SDK reflects this behavior
 // Set perPage and page is also available
 const pageTwoUsers = await companySDK.user.getUsers({}, 50, 2)
 
 const firstOneHundred = await companySDK.user.getUsers({}, 100)
 ```
-
 
 ## Consider supporting me
 
