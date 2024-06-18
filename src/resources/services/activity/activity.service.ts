@@ -1,4 +1,4 @@
-import { APIClient } from './../../base'
+import { APIClient } from '@/resources/base'
 import type { IActivity } from './types/activity.type'
 
 export class ActivityService extends APIClient {

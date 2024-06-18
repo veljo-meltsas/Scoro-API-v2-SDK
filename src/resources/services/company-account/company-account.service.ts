@@ -1,4 +1,4 @@
-import { APIClient } from '../../base'
+import { APIClient } from '@/resources/base'
 import type { ICompanyAccount } from './types/company-account.type'
 
 export class CompanyAccountService extends APIClient {

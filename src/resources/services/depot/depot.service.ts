@@ -1,4 +1,4 @@
-import { APIClient } from '../../base'
+import { APIClient } from '@/resources/base'
 import type { IDepot } from './types/depot.type'
 
 export class DepotService extends APIClient {

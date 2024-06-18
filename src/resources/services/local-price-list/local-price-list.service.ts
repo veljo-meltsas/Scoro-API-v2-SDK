@@ -1,4 +1,4 @@
-import { APIClient } from '../../base'
+import { APIClient } from '@/resources/base'
 import type { ILocalPriceList } from './types/local-price-list.type'
 
 export class LocalPriceListService extends APIClient {

@@ -1,4 +1,4 @@
-import { APIClient } from '../../base'
+import { APIClient } from '@/resources/base'
 import { IEventResource } from './types/events-resorces.types'
 
 export class EventResourceService extends APIClient {

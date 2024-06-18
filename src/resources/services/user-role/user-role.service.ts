@@ -1,4 +1,4 @@
-import { APIClient } from '../../base'
+import { APIClient } from '@/resources/base'
 import { IUserRole } from './types/user-role.type'
 
 export class UserRoleService extends APIClient {

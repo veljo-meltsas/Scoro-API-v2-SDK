@@ -1,4 +1,4 @@
-import { APIClient } from '../../base'
+import { APIClient } from '@/resources/base'
 import { ICustomField } from './types/custom-field.type'
 
 export class CustomFieldService extends APIClient {

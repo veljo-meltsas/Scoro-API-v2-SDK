@@ -1,5 +1,5 @@
-import { APIClient } from '../../base'
-import { IDocPdf } from '../shared/types/doc-pdf.type'
+import { APIClient } from '@/resources/base'
+import { IDocPdf } from '@/resources/services/shared/types/doc-pdf.type'
 import { IPrepayment } from './types/prepayment.type'
 
 export class PrepaymentsService extends APIClient {

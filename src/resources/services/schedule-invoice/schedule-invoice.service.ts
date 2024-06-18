@@ -1,4 +1,4 @@
-import { APIClient } from '../../base'
+import { APIClient } from '@/resources/base'
 import { IScheduledInvoice } from './types/schedule-invoice.type'
 
 export class ScheduledInvoiceService extends APIClient {

@@ -1,4 +1,4 @@
-import { APIClient } from '../../base'
+import { APIClient } from '@/resources/base'
 import type { IProductGroup } from './types/product-group.type'
 
 export class ProductGroupService extends APIClient {

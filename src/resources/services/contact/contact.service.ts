@@ -1,4 +1,4 @@
-import { APIClient } from '../../base'
+import { APIClient } from '@/resources/base'
 import { IContactRelatedObjects } from './types/contact-related-object.type'
 import { IContact } from './types/contact.type'
 

@@ -1,4 +1,4 @@
-import { ICustomModule } from '../../custom-module/types/custom-module.type'
+import { ICustomModule } from '@/services/custom-module/types/custom-module.type'
 
 export interface ICustomField {
   id: string

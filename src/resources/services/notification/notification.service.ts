@@ -1,4 +1,4 @@
-import { APIClient } from '../../base'
+import { APIClient } from '@/resources/base'
 import type { INotification } from './types/notification.type'
 
 export class NotificationService extends APIClient {

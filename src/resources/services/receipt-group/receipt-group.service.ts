@@ -1,4 +1,4 @@
-import { APIClient } from '../../base'
+import { APIClient } from '@/resources/base'
 import { IReceiptGroup } from './types/receipt-group.type'
 
 export class ReceiptGroupsService extends APIClient {

@@ -1,4 +1,4 @@
-import { APIClient } from '../../base'
+import { APIClient } from '@/resources/base'
 import { IStatus } from './types/status.type'
 
 export class StatusService extends APIClient {

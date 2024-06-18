@@ -1,4 +1,4 @@
-import { APIClient } from '../../base'
+import { APIClient } from '@/resources/base'
 import { IFileUpload } from './types/file-upload.type'
 import { IFile } from './types/file.type'
 

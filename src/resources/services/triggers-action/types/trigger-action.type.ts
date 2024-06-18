@@ -1,4 +1,4 @@
-import { ValueOf } from '../../../../utils/value-of'
+import { ValueOf } from '@/utils/value-of'
 
 export interface ITriggerAction {
   id: number

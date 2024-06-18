@@ -1,4 +1,4 @@
-import { APIClient } from '../../base'
+import { APIClient } from '@/resources/base'
 import { ITriggerAction } from './types/trigger-action.type'
 
 export class TriggerActionService extends APIClient {

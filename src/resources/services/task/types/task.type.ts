@@ -1,5 +1,5 @@
-import { IEvent } from '../../shared/types/event.type'
-import { ITimeEntry } from '../../time-entry/types/time-entry.type'
+import { IEvent } from '@/resources/services/shared/types/event.type'
+import { ITimeEntry } from '@/services/time-entry/types/time-entry.type'
 
 export interface ITask extends IEvent {
   is_completed: boolean

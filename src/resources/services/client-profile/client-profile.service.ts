@@ -1,4 +1,4 @@
-import { APIClient } from '../../base'
+import { APIClient } from '@/resources/base'
 import { IClientProfile } from './types/client-profile.type'
 
 export class ClientProfileService extends APIClient {

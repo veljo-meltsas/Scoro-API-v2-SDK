@@ -1,4 +1,4 @@
-import { APIClient } from '../../base'
+import { APIClient } from '@/resources/base'
 import { ICustomModule } from './types/custom-module.type'
 
 export class CustomModuleService extends APIClient {

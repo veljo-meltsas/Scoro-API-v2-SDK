@@ -1,4 +1,4 @@
-import { APIClient } from '../../base'
+import { APIClient } from '@/resources/base'
 import type { ICategory } from './types/category.type'
 
 export class CategoryService extends APIClient {

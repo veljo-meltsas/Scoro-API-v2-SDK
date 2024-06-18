@@ -1,4 +1,4 @@
-import { APIClient } from '../../base'
+import { APIClient } from '@/resources/base'
 import { IComment } from './types/comment.type'
 
 export class CommentService extends APIClient {

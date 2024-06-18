@@ -1,4 +1,4 @@
-import { APIClient } from '../../base'
+import { APIClient } from '@/resources/base'
 import type { IAddress } from './types/address.type'
 
 export class AddressService extends APIClient {

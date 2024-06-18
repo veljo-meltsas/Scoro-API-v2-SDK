@@ -1,4 +1,4 @@
-import { APIClient } from '../../base'
+import { APIClient } from '@/resources/base'
 import type { IBookmark } from './types/bookmark.type'
 
 export class BookmarkService extends APIClient {

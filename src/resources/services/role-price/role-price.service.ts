@@ -1,4 +1,4 @@
-import { APIClient } from '../../base'
+import { APIClient } from '@/resources/base'
 import { IRolePrice } from './types/role-price.type'
 
 export class RolePriceService extends APIClient {

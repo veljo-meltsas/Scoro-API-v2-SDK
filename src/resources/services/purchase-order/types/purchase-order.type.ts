@@ -1,4 +1,4 @@
-import { IAddress } from '../../shared/types/address.type'
+import { IAddress } from '@/resources/services/shared/types/address.type'
 
 export interface IPurchaseOrder {
   quote_id?: number // Related quote ID

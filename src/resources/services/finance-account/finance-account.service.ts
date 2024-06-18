@@ -1,4 +1,4 @@
-import { APIClient } from '../../base'
+import { APIClient } from '@/resources/base'
 import { IFinanceAccount } from './types/finance-account.type'
 
 export class FinanceAccountService extends APIClient {

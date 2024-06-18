@@ -1,4 +1,4 @@
-import { APIClient } from '../../base'
+import { APIClient } from '@/resources/base'
 import { ITag } from './types/tag.type'
 
 export class TagService extends APIClient {

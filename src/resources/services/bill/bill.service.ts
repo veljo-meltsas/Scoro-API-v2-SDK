@@ -1,4 +1,4 @@
-import { APIClient } from '../../base'
+import { APIClient } from '@/resources/base'
 import { IBill } from './types/bill.type'
 
 export class BillsService extends APIClient {

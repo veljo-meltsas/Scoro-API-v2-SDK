@@ -1,4 +1,4 @@
-import { APIClient } from '../../base'
+import { APIClient } from '@/resources/base'
 import { IUserGroup } from './types/user-group.type'
 
 export class UserGroupService extends APIClient {

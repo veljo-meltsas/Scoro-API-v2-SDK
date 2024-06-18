@@ -1,4 +1,4 @@
-import { APIClient } from './../../base'
+import { APIClient } from '@/resources/base'
 import type { ITask } from './types/task.type'
 
 export class TaskService extends APIClient {

@@ -1,4 +1,4 @@
-import { APIClient } from '../../base'
+import { APIClient } from '@/resources/base'
 import { ISendLog } from './types/send-log.type'
 
 export class SendLogService extends APIClient {

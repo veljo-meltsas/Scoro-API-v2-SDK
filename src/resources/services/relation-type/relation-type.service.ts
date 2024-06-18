@@ -1,4 +1,4 @@
-import { APIClient } from '../../base'
+import { APIClient } from '@/resources/base'
 import { IRelationType } from './types/relation-type.type'
 
 export class RelationTypeService extends APIClient {

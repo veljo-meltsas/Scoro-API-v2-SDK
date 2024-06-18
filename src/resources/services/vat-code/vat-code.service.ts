@@ -1,4 +1,4 @@
-import { APIClient } from '../../base'
+import { APIClient } from '@/resources/base'
 import { IVatCode } from './types/vat-code.type'
 
 export class VatCodeService extends APIClient {

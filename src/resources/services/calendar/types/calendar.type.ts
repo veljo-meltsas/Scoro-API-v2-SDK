@@ -1,6 +1,6 @@
-import { IEventResource } from '../../event-resource/types/events-resorces.types'
-import { IEvent } from '../../shared/types/event.type'
-import { IUser } from '../../user/types/user.type'
+import { IEventResource } from '@/services/event-resource/types/events-resorces.types'
+import { IEvent } from '@/resources/services/shared/types/event.type'
+import { IUser } from '@/services/user/types/user.type'
 
 export interface ICalendar extends IEvent {
   address: string

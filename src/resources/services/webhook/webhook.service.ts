@@ -1,4 +1,4 @@
-import { APIClient } from '../../base'
+import { APIClient } from '@/resources/base'
 import { IWebhook } from './types/webhook.type'
 
 export class WebhookService extends APIClient {

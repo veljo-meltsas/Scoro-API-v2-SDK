@@ -1,4 +1,4 @@
-import { APIClient } from './../../base'
+import { APIClient } from '@/resources/base'
 import { IProjectRelatedObjects } from './types/project-related-object.type'
 import type { IProject } from './types/project.type'
 

@@ -1,4 +1,4 @@
-import { APIClient } from '../../base'
+import { APIClient } from '@/resources/base'
 import { ITimeEntry } from './types/time-entry.type'
 
 export class TimeEntryService extends APIClient {

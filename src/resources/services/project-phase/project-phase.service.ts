@@ -1,4 +1,4 @@
-import { APIClient } from '../../base'
+import { APIClient } from '@/resources/base'
 import type { IProjectPhase } from './types/project-phase.type'
 
 export class ProjectPhaseService extends APIClient {

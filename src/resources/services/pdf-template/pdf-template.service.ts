@@ -1,4 +1,4 @@
-import { APIClient } from '../../base'
+import { APIClient } from '@/resources/base'
 import { IPDFTemplate } from './types/pdf-template.type'
 
 export class PDFTemplateService extends APIClient {

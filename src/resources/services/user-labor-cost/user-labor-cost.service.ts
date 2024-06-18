@@ -1,4 +1,4 @@
-import { APIClient } from '../../base'
+import { APIClient } from '@/resources/base'
 import { IUserLaborCost } from './types/user-labor-cost.service.type'
 
 export class UserLaborCostService extends APIClient {

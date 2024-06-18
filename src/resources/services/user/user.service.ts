@@ -1,4 +1,4 @@
-import { APIClient } from './../../base'
+import { APIClient } from '@/resources/base'
 import { IUserSettings } from './types/settings.type'
 import type { IUser } from './types/user.type'
 
