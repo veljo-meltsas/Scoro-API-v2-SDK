@@ -26,7 +26,6 @@
   "files": [
     "dist"
   ],
-  "author": "André Vitor Rampanelli <andrerampanelli1@gmail.com>",
   "keywords": [],
   "license": "ISC",
   "devDependencies": {

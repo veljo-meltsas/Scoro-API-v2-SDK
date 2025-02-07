@@ -50,7 +50,3 @@ const pageTwoUsers = await companySDK.user.getUsers({}, 50, 2)
 
 const firstOneHundred = await companySDK.user.getUsers({}, 100)
 ```
-
-## Consider supporting me
-
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://buymeacoffee.com/andrerampanelli)
