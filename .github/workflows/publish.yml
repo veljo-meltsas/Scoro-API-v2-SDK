@@ -4,13 +4,14 @@ on:
     branches:
       - main
 
-permissions:
-  contents: read
-
 jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      repository-projects: write
     environment:
       name: Semver
     steps:
