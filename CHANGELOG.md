@@ -1,3 +1,12 @@
+## [1.5.3](https://github.com/Scoro-Software/Scoro-API-v2-SDK/compare/v1.5.2...v1.5.3) (2025-02-07)
+
+
+### Bug Fixes
+
+* add GITHUB_TOKEN for release job ([95eaadc](https://github.com/Scoro-Software/Scoro-API-v2-SDK/commit/95eaadc122e8a092c47d4e22aa955cac5330e165))
+* add GITHUB_TOKEN for release job ([5b76215](https://github.com/Scoro-Software/Scoro-API-v2-SDK/commit/5b762154c451e03c65efbab6d0c74049ea2f7990))
+* more permissions ([c5e2bee](https://github.com/Scoro-Software/Scoro-API-v2-SDK/commit/c5e2bee175817f5899f1076071d10e930106adbd))
+
 ## [1.5.1](https://github.com/Scoro-Software/Scoro-API-v2-SDK/compare/v1.5.0...v1.5.1) (2024-06-18)
 
 
