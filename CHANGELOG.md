@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/Scoro-Software/Scoro-API-v2-SDK/compare/v1.5.3...v1.6.0) (2025-02-07)
+
+
+### Features
+
+* added link to api docs ([d723658](https://github.com/Scoro-Software/Scoro-API-v2-SDK/commit/d723658d8995d1d0a4848e47a45fdb3ddb1113a9))
+
 ## [1.5.3](https://github.com/Scoro-Software/Scoro-API-v2-SDK/compare/v1.5.2...v1.5.3) (2025-02-07)
 
 
