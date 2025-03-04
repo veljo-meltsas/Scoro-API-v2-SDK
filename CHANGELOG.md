@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/Scoro-Software/Scoro-API-v2-SDK/compare/v1.6.0...v1.7.0) (2025-02-18)
+
+
+### Features
+
+* make detailed_response configurable for calendar events list - findAllCalendarEventsBy ([fbc7edc](https://github.com/Scoro-Software/Scoro-API-v2-SDK/commit/fbc7edc038dd1ff9a0b872124a2805ce3c8c9bd5))
+
 # [1.6.0](https://github.com/Scoro-Software/Scoro-API-v2-SDK/compare/v1.5.3...v1.6.0) (2025-02-07)
 
 
