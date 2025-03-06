@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/Scoro-Software/Scoro-API-v2-SDK/compare/v1.7.0...v1.8.0) (2025-03-06)
+
+
+### Features
+
+* add batch upsert support for calendar events, repeat_id and external_data fields to ICalendar ([20fee07](https://github.com/Scoro-Software/Scoro-API-v2-SDK/commit/20fee072e35d8ba77943046979e2582dddeadc9b))
+
 # [1.7.0](https://github.com/Scoro-Software/Scoro-API-v2-SDK/compare/v1.6.0...v1.7.0) (2025-02-18)
 
 
